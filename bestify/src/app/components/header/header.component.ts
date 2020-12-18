@@ -90,6 +90,7 @@ export class HeaderComponent implements OnInit {
 
     sessionStorage.removeItem('user');
     this.isLogin = false;
+    this.router.navigate(["/home"]);
   }
 
   goToProfile() {
