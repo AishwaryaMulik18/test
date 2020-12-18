@@ -57,6 +57,7 @@ export class LogindialogComponent implements OnInit {
             sessionStorage.setItem('admin', data);
             sessionStorage.setItem('token', data.token);
             sessionStorage.setItem('username', data.user.username);
+
             this.adminLoggedIn = true;
             this.dialogRef.close({
               event: 'close',
@@ -66,7 +67,8 @@ export class LogindialogComponent implements OnInit {
             sessionStorage.setItem('user', data);
             sessionStorage.setItem('token', data.token);
             sessionStorage.setItem('username', data.user.username);
-           
+            sessionStorage.setItem('userid',data.user.id);
+
 
             this.loggedIn = true;
             this.dialogRef.close({
@@ -76,6 +78,7 @@ export class LogindialogComponent implements OnInit {
           }
         },
         (error) => {
+          alert(this.data);
           alert('Please enter valid credentials.');
         }
       );
